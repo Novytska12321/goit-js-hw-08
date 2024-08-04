@@ -66,6 +66,7 @@ const images = [
 
 const imgGallery = document.querySelector(".gallery");
 function createGallery({ preview, original, description }) {
+
   return `<li class="gallery-item">
                 <a class="gallery-link" href="${original}">
                     <img
@@ -79,4 +80,16 @@ function createGallery({ preview, original, description }) {
 }
 const galleryItems = images.map(createGallery).join('');
 imgGallery.insertAdjacentHTML("beforeend", galleryItems);
+imgGallery.addEventListener('click', (event) => {
+  event.preventDefault();
+  const target = event.target;
+  if (target.nodeName === "IMG") {
+    const largeImg = target.dataset.source;
+    console.log(largeImg);
+    
+  }
+});
+
+
+
 
