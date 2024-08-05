@@ -1,3 +1,4 @@
+
 const images = [
   {
     preview:
@@ -86,9 +87,17 @@ imgGallery.addEventListener('click', (event) => {
   if (target.nodeName === "IMG") {
     const largeImg = target.dataset.source;
     console.log(largeImg);
+    basicLightbox.create(`
+		<img src = "${largeImg}">
+	`).show()
     
   }
 });
+
+
+	
+
+
 
 
 
